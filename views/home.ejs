@@ -1,0 +1,20 @@
+<%- include("partials/header") -%>
+
+    <h1>Home</h1>
+    <p><%= homeContent %></p>
+
+    <hr>
+   
+    <% posts.forEach(function(post){%>
+        <div class="card m-2">
+            <div class="card-body">
+                <h3> <%=post.title.toUpperCase()%> </h3>
+                <p> <%= post.content.substring(0,200)+" .... " %> </p> <a style="text-decoration: none;" href="/posts/<%=post.title%>">Read More</a>
+            </div>
+        </div>
+        
+    <%})%>
+    
+
+
+<%- include("partials/footer") -%>
